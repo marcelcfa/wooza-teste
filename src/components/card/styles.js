@@ -14,15 +14,14 @@ export const Container = styled.div`
     @media (max-width: 425px) {
       margin: 0 0 10px 0;
     }
-  padding: 10px;
+  padding: 10px 20px;
   border-radius: 10px;
   align-items: center;
 `;
 
 export const Image = styled.img`
-  width: 120px;
-  height: 120px;
   margin-right: 20px;
+  border-radius: 5px
 `;
 
 export const UserInfo = styled.div`
