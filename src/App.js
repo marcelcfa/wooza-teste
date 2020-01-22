@@ -11,8 +11,7 @@ class App extends Component{
     };
   }
 
-  componentDidMount() {
-    
+  componentDidMount() {    
     let url = "http://localhost:3001/users"
     fetch(url)
       .then(res => res.json())
@@ -30,14 +29,10 @@ class App extends Component{
       return <div>Loading ... </div>;
     } else {
       return (
-        <List users = {users} />
+        <List users={ users } />
       );
     }
   }  
 }
 
 export default App;
-
-
-// Start Server => json-server --watch db.json --port 3001
-// Start App => npm start
