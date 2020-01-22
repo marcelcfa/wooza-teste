@@ -5,7 +5,7 @@ import { Container } from './styles';
 const List = ({ users }) => (
     <Container>
         {users.map(user => (
-        <Card user={ user } />
+        <Card key={ user.id } user={ user } />
         ))}
     </Container>
   )

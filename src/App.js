@@ -1,38 +1,34 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
+
+import * as API from  './services/api';
 import List from './components/list/List'
-
-
-class App extends Component{
-  constructor(props) {
-    super(props);
-    this.state = {
-      users: [],
-      isLoaded: false,
-    };
-  }
-
-  componentDidMount() {    
-    let url = "http://localhost:3001/users"
-    fetch(url)
-      .then(res => res.json())
-      .then(result => {
-        this.setState({
-          isLoaded: true,
-          users: result
-        });
-      });
-  }
-
-  render() {
-    const { users, isLoaded } = this.state;
-    if (!isLoaded) {
-      return <div>Loading ... </div>;
-    } else {
-      return (
-        <List users={ users } />
-      );
+class App extends Component {
+  state = {
+    users: [],
+    isLoaded: false,
+    error: null
+  };
+  async getUsers () {
+    try {
+      this.setState({ isLoaded: true })
+      const data  = await API.getUsers()
+      this.setState({ loading: false, users: data })
+    } catch (error) {
+      this.setState({ error, isLoaded: false })
     }
-  }  
+  }
+  componentDidMount () {
+    this.getUsers()
+  }
+  render () {
+    const { users, isLoaded, error } = this.state;
+    if (error) {
+      return (<strong>{error.message}</strong>);
+    }
+    if (!isLoaded) {
+      return (<div>Loading ... </div>);
+    } 
+    return (<List users={users} />);
+  }
 }
-
 export default App;

@@ -9,7 +9,7 @@ export const Container = styled.div`
     }
   margin: 5px;
   height: 150px;
-  background: white;
+  background: #f2f2f2;
   margin-right: 10px;
     @media (max-width: 425px) {
       margin: 0 0 10px 0;
