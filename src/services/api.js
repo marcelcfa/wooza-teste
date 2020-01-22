@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:3003"
+const API_URL = "http://localhost:3001"
 const parseFetchResponse = (res) => {
   if (!res.ok) {
     throw new Error("Ops.. something went wrong")
