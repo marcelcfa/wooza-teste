@@ -10,6 +10,6 @@ O srevidor estará na URL [http://localhost:3001](http://localhost:3001)
 ## App
 
 Para rodar o app digite o coomando abaixo:
-### `npm start` fails to minify
+### `npm start` 
 
 # wooza-test
