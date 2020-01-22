@@ -1,5 +1,3 @@
-# Teste para Frontend Wooza
-
 # Servidor
 
 Para subir o servidor digite o comando abaixo:
