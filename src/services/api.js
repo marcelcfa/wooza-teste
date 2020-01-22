@@ -1,4 +1,4 @@
-const API_URL = "https://marcelcfa.github.io/wooza-teste/public/db.json"
+const API_URL = "https://marcelcfa.github.io/wooza-teste/db.json"
 const parseFetchResponse = (res) => {
   if (!res.ok) {
     throw new Error("Ops.. something went wrong")
