@@ -1,4 +1,4 @@
-const API_URL = "https://marcelcfa.github.io/wooza-teste/db.json"
+const API_URL = "http://localhost:3001"
 const parseFetchResponse = (res) => {
   if (!res.ok) {
     throw new Error("Ops.. something went wrong")
@@ -6,7 +6,7 @@ const parseFetchResponse = (res) => {
     return res.json()
   }
 }
-export const getUsers = () => fetch(API_URL).then(parseFetchResponse)
+export const getUsers = () => fetch(`${API_URL}/users`).then(parseFetchResponse)
 
 export default {
   getUsers

@@ -12,7 +12,7 @@ class App extends Component {
     try {
       this.setState({ isLoaded: true })
       const data  = await API.getUsers()
-      this.setState({ loading: false, users: data.users })
+      this.setState({ loading: false, users: data })
     } catch (error) {
       this.setState({ error, isLoaded: false })
     }
